@@ -1,4 +1,7 @@
 .claude/
+# full-size originals; the page uses the resized headshot.jpg and it-banner.jpg
+assets/img/wendyvang_headshot.jpg
+assets/img/it_banner_unsplash.jpg
 .DS_Store
 Thumbs.db
 

@@ -24,30 +24,52 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="site-header wrap">
-    <h1>Wendy Vang</h1>
-    <p class="intro">I work on cloud infrastructure and AI automation. I graduate from the University of Minnesota in December 2026 and start at Polaris in January 2027 as a D&amp;IT Digital Product Development Associate in the IT Development Program.</p>
-    <nav class="site-nav" aria-label="Profiles and resume">
+  <nav class="page-nav" aria-label="Sections">
+    <div class="wrap">
+      <a class="page-nav-name" href="#top">Wendy Vang</a>
       <ul>
-        <li><a href="https://github.com/Programming-Mellow">GitHub</a></li>
-        <li><a href="https://www.linkedin.com/in/wendyvang05">LinkedIn</a></li>
-        <li><a href="mailto:vangwendy.05@gmail.com">Email</a></li>
-        <li><a class="button" href="assets/Wendy-Vang-Resume.pdf">Resume (PDF)</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
-    </nav>
+    </div>
+  </nav>
+
+  <header id="top" class="site-header wrap">
+    <div class="header-text">
+      <h1>Wendy Vang</h1>
+      <p class="intro">I work on cloud infrastructure and AI automation. I graduate from the University of Minnesota in December 2026 and start at Polaris in January 2027 as a D&amp;IT Digital Product Development Associate in the IT Development Program.</p>
+      <p class="intro">Right now I'm leading a chatbot for the School of Dentistry's CODA accreditation process and building hands-on labs for the Cloud Infrastructure and DevOps course I TA.</p>
+      <nav class="site-nav" aria-label="Profiles and resume">
+        <ul>
+          <li><a href="https://github.com/Programming-Mellow">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/wendyvang05">LinkedIn</a></li>
+          <li><a href="mailto:vangwendy.05@gmail.com">Email</a></li>
+          <li><a class="button" href="assets/Wendy-Vang-Resume.pdf">Resume (PDF)</a></li>
+        </ul>
+      </nav>
+    </div>
+    <img class="headshot" src="assets/img/headshot.jpg" width="400" height="400" alt="Headshot of Wendy Vang wearing round glasses, a white shirt, and a dark red tie at an office desk.">
   </header>
 
   <main id="main" class="wrap">
+    <!-- Banner photo from Unsplash. TODO: add the photographer's name here for credit. -->
+    <img class="banner" src="assets/img/it-banner.jpg" width="1760" height="440" alt="">
+
     <section id="about" aria-labelledby="about-heading">
       <h2 id="about-heading">About</h2>
-      <p>I'm in my last semester of a BASc in Information Technology Infrastructure at the University of Minnesota, where I'm an officer in the AWS Cloud Club and a teaching assistant for the Cloud Infrastructure and DevOps course. I spent the last two summers interning in Polaris D&amp;IT, first on Copilot Studio and Power Automate work, then on AI automation built around Dataverse.</p>
-      <p>Outside of class and work, most of what I build runs on a Raspberry Pi at home. It started with a Minecraft server and a small website for my local network. Now it runs a Discord bot that sends my daily briefing, a news digest that Claude curates, and an NFL prediction model with its own API.</p>
+      <p>I'm in my last semester of a BASc in Information Technology Infrastructure at the University of Minnesota. I was an officer in the AWS Cloud Club, and this year I'm a teaching assistant for the Cloud Infrastructure and DevOps course. I spent the last two summers interning in Polaris D&amp;IT, first on Copilot Studio and Power Automate, then on AI automation built around Dataverse.</p>
+      <p>I got my start in IT repairing laptops and phones with Geek Squad at Best Buy. I still do tech support at the Minnesota Orchestra and at the School of Dentistry.</p>
+      <p>Most of what I build outside of class and work runs on a Raspberry Pi at home. It started with a Minecraft server and a small website for my local network. Now it runs the Vikings Win Predictor, an NFL prediction model with its own API that I use to keep track of the Vikings.</p>
+      <p>Away from the computer, I lift weights and play video games, and I go to live concerts with friends and family.</p>
 
       <dl class="skills">
         <div><dt>Cloud and infrastructure</dt> <dd>AWS (EC2, S3, Lambda, DynamoDB, ECS, Bedrock), Azure</dd></div>
         <div><dt>DevOps and platform</dt> <dd>Docker, Kubernetes, Terraform, Ansible, GitHub Actions, Git</dd></div>
         <div><dt>AI engineering</dt> <dd>RAG, embeddings, vector search, AWS Bedrock, LangChain, MCP, Copilot Studio</dd></div>
-        <div><dt>Machine learning</dt> <dd>XGBoost, scikit-learn, SHAP, MLflow</dd></div>
+        <div><dt>Machine learning</dt> <dd>XGBoost, scikit-learn, SHAP, MLflow, AWS SageMaker AI, Jupyter Notebooks</dd></div>
         <div><dt>Security and governance</dt> <dd>IAM, least-privilege access, AI governance, responsible AI, SCAP compliance, DoD security standards</dd></div>
         <div><dt>Monitoring</dt> <dd>Grafana, Prometheus, CloudWatch, Splunk</dd></div>
       </dl>
@@ -56,11 +78,13 @@
     <section id="projects" aria-labelledby="projects-heading">
       <h2 id="projects-heading">Projects</h2>
 
-      <article class="entry">
-        <h3>Vikings Win Predictor</h3>
-        <p>Gives a win probability for every Minnesota Vikings game, or any NFL team's, from XGBoost models trained on each NFL game since 2010, with SHAP factors showing what pushed the number up or down. On 569 games from the 2024 and 2025 seasons that the models never saw, the version that takes the Vegas line as an input tied Vegas on log loss (0.598), and the stats-only version picked 65% of winners. A Claude assistant answers questions about each game by calling the prediction API through an MCP server, so every probability it quotes is pulled from the trained model.</p>
-        <p class="stack">Stack: Python, XGBoost, scikit-learn, SHAP, Polars, MLflow, FastAPI, Streamlit, Claude API, MCP, Docker, GitHub Actions, pytest</p>
-        <p><a href="https://github.com/Programming-Mellow/vikings-win-predictor">Vikings Win Predictor repository on GitHub</a></p>
+      <article class="entry has-media">
+        <div>
+          <h3>Vikings Win Predictor</h3>
+          <p>Gives a win probability for every Minnesota Vikings game, or any NFL team's, from XGBoost models trained on each NFL game since 2010, with SHAP factors showing what pushed the number up or down. On 569 games from the 2024 and 2025 seasons that the models never saw, the version that takes the Vegas line as an input tied Vegas on log loss (0.598), and the stats-only version picked 65% of winners. A Claude assistant answers questions about each game by calling the prediction API through an MCP server, so every probability it quotes is pulled from the trained model.</p>
+          <p class="stack">Stack: Python, XGBoost, scikit-learn, SHAP, Polars, MLflow, FastAPI, Streamlit, Claude API, MCP, Docker, GitHub Actions, pytest</p>
+          <p><a href="https://github.com/Programming-Mellow/vikings-win-predictor">Vikings Win Predictor repository on GitHub</a></p>
+        </div>
         <figure>
           <img src="assets/img/vikings-dashboard.jpg" width="800" height="562" alt="Streamlit dashboard for the Vikings against Indianapolis in week 7, showing 74%, 64%, and 73% win chances from the two models and Vegas, a SHAP bar chart, and the chat assistant explaining the prediction in the sidebar.">
           <figcaption>The dashboard with the chat assistant open.</figcaption>
@@ -71,14 +95,23 @@
         <h3>Self-hosted AI assistant</h3>
         <p>A private LLM setup built with LM Studio and Open WebUI, so my data and conversations stay under my control. I added RAG pipelines with embedding models and vector search for retrieval from my own documents, along with web search for questions the local model can't answer alone. Tailscale lets me reach it from anywhere without exposing any service to the public internet.</p>
         <p class="stack">Stack: LM Studio, Open WebUI, embedding models, vector search, Tailscale</p>
-        <!-- TODO: add a repository link or a screenshot for this project if you have one. -->
+        <!-- TODO: add a repository link or a screenshot for this project later down the line. -->
       </article>
 
       <article class="entry">
-        <h3>WiNDY</h3>
-        <p>A Discord bot that sends me a briefing every morning with tasks pulled from several Notion dashboards, the weather, and news articles chosen by a scikit-learn classifier trained on articles I labeled. At the end of each day it clears finished tasks out of Notion. It runs in Docker on my Raspberry Pi.</p>
-        <p class="stack">Stack: Python, discord.py, Notion API, scikit-learn, SQLite, feedparser, APScheduler, Docker</p>
-        <p><a href="https://github.com/Programming-Mellow/WiNDY-Public">WiNDY repository on GitHub</a></p>
+        <h3>Bedrock FAQ assistant</h3>
+        <p>A chatbot on Amazon Bedrock that answers questions from a set of documentation using retrieval-augmented generation. Bedrock Knowledge Bases backed by OpenSearch Serverless handle the semantic search over the documents. I configured Guardrails to filter content and added CloudWatch logging for compliance monitoring.</p>
+        <p class="stack">Stack: Amazon Bedrock, Bedrock Knowledge Bases, OpenSearch Serverless, Bedrock Guardrails, CloudWatch</p>
+        <!-- TODO: add a repository link or a screenshot if you have one. -->
+      </article>
+
+      <article class="entry has-media">
+        <div>
+          <h3>WiNDY</h3>
+          <p>A Discord bot that sends me a briefing every morning with tasks pulled from several Notion dashboards, the weather, and news articles chosen by a scikit-learn classifier trained on articles I labeled. At the end of each day it clears finished tasks out of Notion. It runs in Docker on my Raspberry Pi.</p>
+          <p class="stack">Stack: Python, discord.py, Notion API, scikit-learn, SQLite, feedparser, APScheduler, Docker</p>
+          <p><a href="https://github.com/Programming-Mellow/WiNDY-Public">WiNDY repository on GitHub</a></p>
+        </div>
         <figure>
           <img src="assets/img/windy-briefing.png" width="639" height="435" alt="WiNDY's morning message in Discord, listing tasks by dashboard, suggested news articles, and the day's forecast." loading="lazy">
         </figure>
@@ -93,7 +126,7 @@
 
       <article class="entry">
         <h3>Raspberry Pi home lab</h3>
-        <p>I set up the Pi headless over RealVNC Viewer in January 2024. Since then I've used it to host a website and a Minecraft server for devices on my home network, and to run WiNDY and the news digest in the background. Next on the list is a network monitoring dashboard that shows which devices are connected, tracks usage, and flags unusual performance numbers.</p>
+        <p>I set up the Pi headless over RealVNC Viewer in January 2024. Since then I've used it to host a website and a Minecraft server for devices on my home network, and to run WiNDY and the news digest in the background.</p>
         <p class="stack">Stack: Raspberry Pi OS, RealVNC, Docker, cron</p>
       </article>
     </section>
@@ -106,7 +139,7 @@
         <div>
           <h3>D&amp;IT Digital Product Development Associate</h3>
           <p class="org">Polaris, IT Development Program</p>
-          <!-- TODO: add a line about the program or team once you know more. -->
+          <!-- TODO: add a line about the program or team later down the line. -->
         </div>
       </div>
 
@@ -148,6 +181,19 @@
       </div>
 
       <div class="entry row">
+        <p class="dates">May 2024 to present</p>
+        <div>
+          <h3>Dental IT Student Tech Support Specialist</h3>
+          <p class="org">University of Minnesota Twin Cities, School of Dentistry, Minneapolis, MN</p>
+          <ul>
+            <li>Leading the development of a chatbot for the School of Dentistry's CODA accreditation process, so faculty and staff can find accreditation information without searching through documentation by hand.</li>
+            <li>Made video tutorials for accessing axiUm on macOS, which cut student walk-in support requests by 50%.</li>
+            <li>Answer help desk requests for the clinics and resolve most of them within an hour.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="entry row">
         <p class="dates">Jan. 2024 to present</p>
         <div>
           <h3>Technical Support Representative</h3>
@@ -156,6 +202,19 @@
             <li>Wrote PowerShell automation that applies DoD SCAP compliance standards to harden servers.</li>
             <li>Led a Splunk integration that pulls AWS, Azure, Microsoft, and Auvik data into real-time monitoring dashboards.</li>
             <li>Resolve over 90% of point-of-sale, scanner, and signage issues within the same shift during concerts of 1,500+ guests.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="entry row">
+        <p class="dates">Aug. 2022 to Jan. 2024</p>
+        <div>
+          <h3>Geek Squad Consultation and Repair Agent</h3>
+          <p class="org">Best Buy, Maple Grove, MN</p>
+          <ul>
+            <li>Repaired laptops, desktops, and smartphones with a success rate above 90%, which kept repeat appointments down.</li>
+            <li>Brought average repair turnaround from 72 hours to 24 hours, and halved the time spent looking up and documenting repair records.</li>
+            <li>Ran technology consultations with customers that raised our Net Promoter Score to over 75% promoters.</li>
           </ul>
         </div>
       </div>
