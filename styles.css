@@ -241,6 +241,12 @@ main > section {
   font-size: var(--size-small);
 }
 
+/* About runs the full width of the banner above it */
+.about p,
+.about .skills div {
+  max-width: none;
+}
+
 .skills {
   margin: var(--space-3) 0 0;
 }
