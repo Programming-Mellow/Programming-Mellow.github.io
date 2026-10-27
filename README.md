@@ -1,6 +1,6 @@
 # Wendy Vang portfolio
 
-Source for my personal site, published with GitHub Pages. It is one HTML page and one stylesheet with no build step and no JavaScript. Design rules live in [DESIGN.md](DESIGN.md).
+Source for my personal site, published with GitHub Pages. It is one HTML page and one stylesheet with no build step and no JavaScript.
 
 ## Files
 
